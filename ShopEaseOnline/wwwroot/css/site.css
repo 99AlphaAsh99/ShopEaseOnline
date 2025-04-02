@@ -1,0 +1,104 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+/* Logo styling */
+.logo-container {
+    display: flex; /* Changed to flex for better alignment */
+    align-items: center; /* Vertically center the logo and company name */
+}
+
+.logo {
+    display: inline-block;
+    background-color: #0056b3; /* Slightly darker blue for contrast */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 40px; /* Center the text vertically */
+    font-size: 18px;
+}
+
+.company-name {
+    margin-left: 10px; /* Space between logo and company name */
+    color: white; /* Match the navbar text color */
+    font-size: 1.25rem; /* Slightly larger font for the company name */
+    font-weight: 500; /* Medium weight for readability */
+}
+
+/* Category styles */
+.categories-container {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+    .categories-container h2 {
+        color: #dc3545;
+        margin-bottom: 15px;
+    }
+
+.category-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.category-dot {
+    width: 20px;
+    height: 20px;
+    background-color: #dc3545;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.category-name {
+    color: #dc3545;
+    font-size: 18px;
+}
+
+/* Product card styling */
+.product-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+    .product-card:hover {
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+.image-container {
+    height: 250px;
+    overflow: hidden;
+}
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
