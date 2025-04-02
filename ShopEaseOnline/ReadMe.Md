@@ -17,6 +17,9 @@ Follow these steps to set up the project environment:
 
 3. **Deploy initial data**
    - Run the `DataDeploymentScript.sql` located in the Scripts folder
+   - Select LocalDB as the target database
+   - In the Drop-down menu, select ShopEaseOnline Database
+
 
 4. **You're all set!**
    - The application is now ready to run
