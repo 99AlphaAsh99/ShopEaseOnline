@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Identity;
-using EShopOnline.Models;
+using ShopEaseOnline.Models;
 
 namespace ShopEaseOnline.Models
 {

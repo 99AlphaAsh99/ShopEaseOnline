@@ -1,0 +1,72 @@
+﻿@page "{orderId:int}"
+@model ShopEaseOnline.Pages.OrderConfirmationModel
+@{
+    ViewData["Title"] = "Order Confirmation";
+    ViewData["ActivePage"] = "orders";
+    ViewData["ActivePageSub"] = "order-confirmation";
+}
+
+
+
+<h2>Order Confirmed!</h2>
+
+<div>
+    <span style="color: green;">✔</span> Your order has been successfully placed!
+</div>
+<p><strong>Order ID:</strong> @Model.Order.OrderID</p>
+<p><strong>Expected Delivery Date:</strong> @Model.Order.ExpectedDeliveryDate.ToShortDateString()</p>
+
+<h3>Items Purchased</h3>
+@if (Model.Order?.OrderItems == null || !Model.Order.OrderItems.Any())
+{
+    <p>No items found in this order.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Quantity</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Order.OrderItems)
+            {
+                <tr>
+                    <td>@item.Product.Title</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.UnitPrice.ToString("C")</td>
+                    <td>@((item.UnitPrice * item.Quantity).ToString("C"))</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h3>Order Summary</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex justify-content-between mb-2">
+                <span>Subtotal:</span>
+                <span>@Model.Subtotal.ToString("C")</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Shipping:</span>
+                <span>@Model.Shipping.ToString("C")</span>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+                <span>Tax:</span>
+                <span>@Model.Tax.ToString("C")</span>
+            </div>
+            <hr>
+            <div class="d-flex justify-content-between mb-2">
+                <strong>Total:</strong>
+                <strong>@Model.Total.ToString("C")</strong>
+            </div>
+        </div>
+    </div>
+}
+
+<p>Thank you for shopping with us!</p>

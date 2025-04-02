@@ -1,0 +1,47 @@
+﻿@page
+@model ShopEaseOnline.Pages.CheckOutModel
+@{
+    ViewData["Title"] = "CheckOut";
+}
+
+<h2>Checkout</h2>
+
+<p><strong>Total Amount:</strong> @Model.CartTotal.ToString("C")</p>
+
+<!-- Mock payment indicator -->
+<div>
+    <span style="color: green;">✔</span> Payment Details Completed (Prototype)
+</div>
+
+<form method="post">
+    <div>
+        <label asp-for="CheckoutData.Name">Name</label>
+        <input asp-for="CheckoutData.Name" class="form-control" />
+        <span asp-validation-for="CheckoutData.Name" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="CheckoutData.DeliveryAddress">Delivery Address</label>
+        <input asp-for="CheckoutData.DeliveryAddress" class="form-control" />
+        <span asp-validation-for="CheckoutData.DeliveryAddress" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="CheckoutData.PostalCode">Postal Code</label>
+        <input asp-for="CheckoutData.PostalCode" class="form-control" />
+        <span asp-validation-for="CheckoutData.PostalCode" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="CheckoutData.City">City</label>
+        <input asp-for="CheckoutData.City" class="form-control" />
+        <span asp-validation-for="CheckoutData.City" class="text-danger"></span>
+    </div>
+    <div>
+        <label asp-for="CheckoutData.Country">Country</label>
+        <input asp-for="CheckoutData.Country" class="form-control" />
+        <span asp-validation-for="CheckoutData.Country" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm Purchase</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

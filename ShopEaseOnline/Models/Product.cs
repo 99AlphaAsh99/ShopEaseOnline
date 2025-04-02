@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using ShopEaseOnline.Models;
 
-namespace EShopOnline.Models
+namespace ShopEaseOnline.Models
 {
     public class Product
     {

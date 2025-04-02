@@ -1,4 +1,4 @@
-﻿using EShopOnline.Models;
+﻿using ShopEaseOnline.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace ShopEaseOnline.Models
